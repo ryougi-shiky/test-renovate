@@ -1,20 +1,20 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: [
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
   ],
-  platformAutomerge: true,
-  customManagers: [
+  "platformAutomerge": true,
+  "customManagers": [
     {
-      customType: 'regex',
-      description: 'Maintain base AMI versions',
-      fileMatch: [
-        'base-ami.txt',
+      "customType": "regex",
+      "description": "Maintain base AMI versions",
+      "fileMatch": [
+        "base-ami.txt"
       ],
-      matchStrings: [
-        '.*amiFilter=(?<packageName>.*?)\n(.*currentImageName=(?<currentDigest>.*?)\n)?(.*\n)?.*?(?<depName>[a-zA-Z0-9-_:]*)[ ]*?[:|=][ ]*?["|\']?(?<currentValue>ami-[a-z0-9]{17})["|\']?.*',
+      "matchStrings": [
+        ".*amiFilter=(?<packageName>.*?)\n(.*currentImageName=(?<currentDigest>.*?)\n)?(.*\n)?.*?(?<depName>[a-zA-Z0-9-_:]*)[ ]*?[:|=][ ]*?[\"|']?(?<currentValue>ami-[a-z0-9]{17})[\"|']?.*"
       ],
-      datasourceTemplate: 'aws-machine-image',
-      versioningTemplate: 'aws-machine-image',
-    },
-  ],
+      "datasourceTemplate": "aws-machine-image",
+      "versioningTemplate": "aws-machine-image"
+    }
+  ]
 }
