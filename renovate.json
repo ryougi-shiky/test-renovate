@@ -11,7 +11,7 @@
         "base-ami.txt"
       ],
       "matchStrings": [
-        ".*amiFilter=(?<packageName>.*?)\n(.*currentImageName=(?<currentDigest>.*?)\n)?(.*\n)?.*?(?<depName>[a-zA-Z0-9-_:]*)[ ]*?[:|=][ ]*?[\"|']?(?<currentValue>ami-[a-z0-9]{17})[\"|']?.*"
+        "^(?<depName>aws:ami:[^:]+:[0-9]+:[^:]+)[ ]*[:=][ ]*(?<currentValue>ami-[a-z0-9]{17})"
       ],
       "datasourceTemplate": "aws-machine-image",
       "versioningTemplate": "aws-machine-image"
