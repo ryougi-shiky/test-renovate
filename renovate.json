@@ -8,7 +8,7 @@
       "customType": "regex",
       "description": "Maintain base AMI versions",
       "fileMatch": [
-        "base-ami.txt"
+        "^base-ami\\.txt$"
       ],
       "matchStrings": [
         ".*amiFilter=(?<packageName>.*?)\n(.*currentImageName=(?<currentDigest>.*?)\n)?(.*\n)?.*?(?<depName>[a-zA-Z0-9-_:]*)[ ]*?[:|=][ ]*?[\"|']?(?<currentValue>ami-[a-z0-9]{17})[\"|']?.*"
